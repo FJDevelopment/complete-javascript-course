@@ -10,9 +10,8 @@ const scoreElement = document.querySelector('.score');
 const hiScoreElement = document.querySelector('.highscore');
 
 const checkGuess = async () => {
-  const guess = userInput.value;
-  const intguess = Number(guess);
-  if (intguess == secretNumber) {
+  const intGuess = Number(userInput.value);
+  if (intGuess == secretNumber) {
     middleNumber.textContent = secretNumber;
     message.textContent = 'yeah baby you got the number!';
     winRound();
@@ -20,8 +19,9 @@ const checkGuess = async () => {
     score = 20;
     beginFreshRound();
   } else {
+    document.querySelector('header').style.backgroundColor = 'red';
     message.textContent =
-      intguess > secretNumber ? 'Too high bby' : 'Too low bby';
+      intGuess > secretNumber ? 'Too high bby' : 'Too low bby';
     score--;
     scoreElement.textContent = score;
   }
@@ -36,6 +36,7 @@ const beginFreshGame = () => {
 };
 
 const beginFreshRound = () => {
+  document.querySelector('header').style.backgroundColor = '#222';
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   middleNumber.textContent = '?';
   message.textContent = 'Guess My Number!';
@@ -45,6 +46,7 @@ const beginFreshRound = () => {
 };
 
 const winRound = () => {
+  document.querySelector('header').style.backgroundColor = 'green';
   if (score > hiScore) {
     hiScore = score;
     hiScoreElement.textContent = hiScore;
