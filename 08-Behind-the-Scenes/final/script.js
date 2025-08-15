@@ -3,7 +3,6 @@
 ///////////////////////////////////////
 // Scoping in Practice
 
-/*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -14,7 +13,7 @@ function calcAge(birthYear) {
     if (birthYear >= 1981 && birthYear <= 1996) {
       var millenial = true;
       // Creating NEW variable with same name as outer scope's variable
-      const firstName = 'Steven';
+      firstName = 'Steven';
 
       // Reasssigning outer scope's variable
       output = 'NEW OUTPUT!';
@@ -30,17 +29,19 @@ function calcAge(birthYear) {
     console.log(millenial);
     // console.log(add(2, 3));
     console.log(output);
+    console.log(firstName);
   }
   printAge();
 
   return age;
 }
 
-const firstName = 'Jonas';
+let firstName = 'Jonas';
+calcAge(1991);
 calcAge(1991);
 // console.log(age);
 // printAge();
-
+/*
 
 ///////////////////////////////////////
 // Hoisting and TDZ in Practice
@@ -230,4 +231,3 @@ jessicaCopy.family.push('John');
 console.log('Before marriage:', jessica2);
 console.log('After marriage: ', jessicaCopy);
 */
-

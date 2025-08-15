@@ -397,7 +397,6 @@ And now explain to YOURSELF (or someone around you) WHY this worked! Take all th
 GOOD LUCK 😀
 */
 
-/*
 (function () {
   const header = document.querySelector('h1');
   header.style.color = 'red';
@@ -406,5 +405,3 @@ GOOD LUCK 😀
     header.style.color = 'blue';
   });
 })();
-*/
-
